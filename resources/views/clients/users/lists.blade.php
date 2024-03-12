@@ -2,7 +2,7 @@
 @section ('title')
     {{$title}}
 @endsection
- 
+
 @section('content')
     @if (session ('msg'))
         <div class= "alert alert-success">
@@ -10,6 +10,8 @@
         </div>
     @endif
     <h1 class="text-center">{{$title}}</h1>
+    <a href="{{route('users.add')}}"class="btn btn-success">Create user</a>
+    <hr>
     <table class="table">
         <thead>
             <tr class="table-success">
@@ -20,8 +22,8 @@
             </tr>
         </thead>
         <tbody>
-            @if (!empty($users))
-                @foreach ($users as $key=> $item )
+            @if (!empty($usersList))
+                @foreach ($usersList as $key=> $item )
                     <tr>
                         <th scope="row">{{$key+1}}</th>
                         <td>{{$item->fullname}}</td>
