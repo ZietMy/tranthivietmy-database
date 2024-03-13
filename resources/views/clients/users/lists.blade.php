@@ -32,7 +32,7 @@
                         <td>{{$item->create_at}}</td>
                         <td>
                             <a href="{{route('users.edit', ['id'=>$item->id])}}"class="btn btn-warning">Sửa</a>
-                            <a href="{{route('users.edit',['id'=>$item->id])}}"class="btn btn-danger">Xóa</a>
+                            <a onclick="return confirm('bạn có chắc chắn muốn xóa')" href="{{route('users.delete',['id'=>$item->id])}}"class="btn btn-danger">Xóa</a>
                         </td>
                     </tr>
                 @endforeach
