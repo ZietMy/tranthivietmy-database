@@ -19,6 +19,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Create_at</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -29,11 +30,15 @@
                         <td>{{$item->fullname}}</td>
                         <td>{{$item->email}}</td>
                         <td>{{$item->create_at}}</td>
+                        <td>
+                            <a href="{{route('users.edit', ['id'=>$item->id])}}"class="btn btn-warning">Sửa</a>
+                            <a href="{{route('users.edit',['id'=>$item->id])}}"class="btn btn-danger">Xóa</a>
+                        </td>
                     </tr>
                 @endforeach
             @else
                 <tr>
-                    <td colspan="4">Không có người dùng</td>
+                    <td colspan="5">Không có người dùng</td>
                 </tr>
             @endif
         </tbody>
