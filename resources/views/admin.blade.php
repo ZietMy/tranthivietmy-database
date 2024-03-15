@@ -19,7 +19,7 @@
             <div class="col-3">
                 <div class="sidebar">
                     <div class="logo d-flex justify-content-evenly align-items-center">
-                            <img src="{{ asset('assets/clients/images/logo.png') }}" alt="SafeTech">
+                            <img src="{{asset('assets/clients/images/logo.png')}}" alt="SafeTech">
                             <span class="name-group">SAFETECH</span>
                     </div>
                     <div class="list">
@@ -70,7 +70,8 @@
                         <input type="text" placeholder="Seach here" class="input-search-bar col">
                         <i class="fa fa-search search-icon" aria-hidden="true"></i>
                     </div>
-                    <div class="row col-3 d-flex align-items-center icon ">
+                    <div class="row col-3 d-flex align-items-center justify-content-end icon ">
+                        
                         <i class="fa fa-bell-o col-3" aria-hidden="true"></i>
                         <i class="fa fa-comment-o col-3" aria-hidden="true"></i>
                         <div class="dropdown col-4">
@@ -87,19 +88,90 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="content row row-cols-2">
-                        <div class="col">Column</div>
-                        <div class="col">Column</div>
-                        <div class="col">Column</div>
-                        <div class="col">Column</div>
+                    <div class="content p-0">
+                        <div class="row row-cols-2 m-2">
+                            <div class="col p-0">
+                                <div class="col m-2 alert alert-primary">
+                                    <h5>Total Income</h5>
+                                    <h3>$579,000</h3>
+                                    <span>Save 25%</span>
+                                </div>
+                            </div>
+                            <div class="col p-0">
+                                <div class="col m-2 alert alert-success">
+                                <h5>Total Income</h5>
+                                <h3>$579,000</h3>
+                                <span>Save 25%</span>
+                                </div>
+                            </div>
+                            <div class="col p-0">
+                                <div class="col m-2 alert alert-danger">
+                                    <h5>Total Income</h5>
+                                    <h3>$579,000</h3>
+                                    <span>Save 25%</span>
+                                </div>
+                            </div>
+                            <div class="col p-0">
+                                <div class="col m-2 alert alert-warning">
+                                <h5>Total Income</h5>
+                                <h3>$579,000</h3>
+                                <span>Save 25%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-cols-4 m-2">
+                            <div class="col-6 p-0">
+                                <div class="col m-2">
+                                    <img src="{{ asset('assets/clients/images/charts.png') }}" alt="" style="width:450px">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <img src="{{ asset('assets/clients/images/chart.png') }}" alt="" style="width:200px">
+                            </div>
+                            <div class="col">
+                                <img src="{{ asset('assets/clients/images/chart.png') }}" alt="" style="width:200px">
+                            </div>
+                        </div>
                     </div>  
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        
+        
+        var charts = new CanvasJS.Chart("chartContainer1", {
+            animationEnabled: true,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            title:{
+                text: "Top Oil Reserves"
+            },
+            axisY: {
+                title: "Reserves(MMbbl)"
+            },
+            data: [{        
+                type: "column",  
+                showInLegend: true, 
+                legendMarkerColor: "grey",
+                legendText: "MMbbl = one million barrels",
+                dataPoints: [      
+                    { y: 300878, label: "Venezuela" },
+                    { y: 266455,  label: "Saudi" },
+                    { y: 169709,  label: "Canada" },
+                    { y: 158400,  label: "Iran" },
+                    { y: 142503,  label: "Iraq" },
+                    { y: 101500, label: "Kuwait" },
+                    { y: 97800,  label: "UAE" },
+                    { y: 80000,  label: "Russia" }
+                ]
+            }]
+        });
+        charts.render();
+    </script>
     <script src="{{ asset('assets/clients/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/clients/js/custom.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 </body>
 </html>
