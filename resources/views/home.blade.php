@@ -18,13 +18,7 @@
         <div class="tast-list d-flex justify-content-between align-items-center alert alert-secondary">
             <div>Task List</div>
             <span class="border">
-                <span class="icon">
-                    <svg viewBox="0 0 175 80" width="40" height="40">
-                        <rect width="80" height="15" fill="#000" rx="10"></rect>
-                        <rect y="30" width="80" height="15" fill="#000" rx="10"></rect>
-                        <rect y="60" width="80" height="15" fill="#000" rx="10"></rect>
-                    </svg>
-                </span>
+                <i class="fa fa-bars"></i>
             </span>
             </div>
         <div class="m-3  new-task  border">
@@ -54,27 +48,19 @@
                     <label for=""class='col'><b>Task</b></label>
                 </div>
                 <table class="table ">
-                    {{-- <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                      </tr>
-                    </thead> --}}
                     <tbody>
                       <tr>
                         <td >First</td>
                         <td> 
                             <button class="btn btn-danger"> 
-                                <i class="fa fa-trash"></i>   Add Task</button>
+                                <i class="fa fa-trash"></i> Delete</button>
                         </td>  
                       </tr>
                       <tr>
                         <td >Second</td>
                         <td> 
                             <button class="btn btn-danger"> 
-                                <i class="fa fa-trash"></i>   Add Task</button>
+                                <i class="fa fa-trash"></i> Delete</button>
                         </td>  
                       </tr>
                      
