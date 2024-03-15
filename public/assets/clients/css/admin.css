@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body{
+    font-family:roboto;
+    background-color: rgb(162, 200, 234);
+}
+.logo{
+    background-color: white;
+    border-radius: 1rem;
+    margin:2rem 0;
+}
+.logo img{
+    width: 6em;
+}
+.name-group{
+    font-weight: 600;
+    font-size: 2rem;        
+    color: #d74e4e;
+}
+.list{
+    padding: 1.0rem;
+    
+}
+.list-group{
+    border-radius: 1rem;
+  
+}
+.list-group-item{
+    background-color: inherit; 
+}
+/* HEADER */
+.header{
+    margin:2rem 0;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem; 
+}
+.input-search-bar{
+    /* color: #000; */
+    font-size: 17px;
+    height: 60px;
+    /* width: 100%; */
+    padding-left: 82px;
+    border: 0;
+    padding-right: 15px;    
+    border-bottom: 1px solid #f4f7fc;
+    background: #f7faff;
+    border-radius: 30px;
+}
+.search-icon{
+    position: absolute;
+    /* left: 0;
+    top: 10; */
+    /* height: 100%; */
+    background: 0 0;
+    font-size: 1.5rem;
+    border: 0;
+    padding-left: 1rem;
+    padding-right: 11px;
+    margin-top:1rem;
+}
+.icon i{
+    font-size:1.5rem;
+    font-weight: 400;
+}
+.avt-admin{
+    width: 4em;
+    height: 4em;
+    border: solid 4px rgb(206, 58, 58);
+    border-radius:999px;
+}
+/* content */
+.content{
+    background-color: #fff;
+}
