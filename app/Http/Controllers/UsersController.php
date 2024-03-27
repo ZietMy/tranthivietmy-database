@@ -16,8 +16,10 @@ class UsersController extends Controller
         $title ="Danh sách người dùng";
 
        
-        $usersList = $this->users->getAllUser();
-        return view('clients.users.lists', compact ('title','usersList'));
+        $this->users->learnQueryBuiler();
+        $userList = $this->users->getAllUser();
+        return view('client.users.lists', compact('title', 'userList'));
+     
     }
     public function add(){
         $title ='Create user';
@@ -102,4 +104,5 @@ class UsersController extends Controller
         }
         return redirect()->route('users.index')->with('msg',$msg);
     }
+    
 }
