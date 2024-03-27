@@ -64,7 +64,21 @@ class Users extends Model
             // ->delete();
 
             // đếm số bảng ghi
-            $count = DB::table('users')->where('id','>',2)->count();
+            // $count = DB::table('users')->where('id','>',2)->count();
+            $lists =  DB::table('users')
+             //   ->selectRaw('fullname','email','c')
+            // ->select(
+            //     DB::raw('fullname','email')
+            // )
+            // ->groupBy('email')
+            //->where(DB::raw('id','>',3))
+            ->selectRaw('fullname,email')
+            // ->whereRaw('id>3')
+            // ->where('id','>',2)
+            // ->orderByRaw('create_at DESC,update_at ASC')
+            // ->orderByRaw('email,fullname')
+            // ->having('email_count','>=',2)
+            ->get();
              $sql = DB::getQueryLog();
         dd($sql);
     //    $lists = DB::table($this->table)
