@@ -31,21 +31,41 @@ class Users extends Model
         // lấy tất cả bản ghi của table
         $id=20;
         // Join 2 bảng lại với nhau
-        $lists =  DB::table('users')
-        ->take(2)
-        ->skip(2)
-        ->get();
-            // ->select('users.*', 'groups.name as group_name')
-            // ->rightJoin('groups', 'users.group_id', '=', 'groups.id');
-            //->orderBy('create_at','desc');
-            // ->orderBy('id','desc');
-            // ->inRandomOrder();
-            // ->select(DB::raw('count(id) as email_count'), 'email')
-            // ->groupBy('email')
-            // ->having('email_count')
-            // ->limit(2)
-            // ->offset(1)
-        $sql = DB::getQueryLog();
+        // $lists =  DB::table('users')
+         // ->take(2)
+            // ->skip(2)
+            // ->get();
+            // $status = DB::table('users')->insert([
+            //     'fullname' => 'Nguyễn Văn A',
+            //     'email' => 'nguyenvana@gamil.com',
+            //     'group_at' => 1,
+            //     'create_at' =>date('Y-m-d H:i:s')
+            // ]);
+            // dd($status);
+            // $lastId = DB::getPdo()->lastInsertId();
+
+            // $lastId = DB::table('users')->insertGetId([
+            //     'fullname' => 'Nguyễn Văn A',
+            //     'email' => 'nguyenvana@gamil.com',
+            //     'group_at' => 1,
+            //     'create_at' =>date('Y-m-d H:i:s')
+            // ]);
+
+            // $status = DB::table('users')
+            // ->where('id',3)
+            // ->update([
+            //     'fullname' => 'Nguyễn Văn B',
+            //     'email' => 'nguyenvanb@gmail.com',
+            //     'update_at' => 'Y-m-d H:i:s' 
+            // ]);
+
+            // $status = DB::table('users')
+            // ->where('id',3)
+            // ->delete();
+
+            // đếm số bảng ghi
+            $count = DB::table('users')->where('id','>',2)->count();
+             $sql = DB::getQueryLog();
         dd($sql);
     //    $lists = DB::table($this->table)
     //    ->select('fullname','email')->whereIn('id',[1,4])
