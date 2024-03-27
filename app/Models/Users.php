@@ -30,17 +30,23 @@ class Users extends Model
     public function learnQueryBuiler(){
         // lấy tất cả bản ghi của table
         $id=20;
-       $lists = DB::table($this->table)
-       ->select('fullname','email')->whereIn('id',[1,4])
-       ->get();
-      $sql = DB::getQueryLog();
+        // Join 2 bảng lại với nhau
+        $lists =  DB::table('users')
+        ->select('users.*', 'groups.name as group_name')
+        ->rightJoin('groups', 'users.group_id', '=', 'groups.id');
+        $sql = DB::getQueryLog();
+        dd($sql);
+    //    $lists = DB::table($this->table)
+    //    ->select('fullname','email')->whereIn('id',[1,4])
+    //    ->get();
+    //   $sql = DB::getQueryLog();
     //    ->where('id','<>',2)
     //     ->where('id','>=',2)
     //     ->where('id','<=',4)
     //    ->get();
 
        // Lấy 1 bản ghi đầu tiên của table lấy thông tin chi tiết
-       $detail = DB::table($this->table)->first();
+    //    $detail = DB::table($this->table)->first();
 
     }
 }
